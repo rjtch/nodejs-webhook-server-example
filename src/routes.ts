@@ -5,7 +5,7 @@ import qs from "querystring";
 import { IncomingHttpHeaders } from "http";
 import { Request as ExpressRequest } from "express";
 
-const SECRET: string = import.meta.env.VITE_HOOKDECK_SIGNING_SECRET || "";
+const SECRET: string = import.meta.env.VITE_HOOKDECK_SIGNING_SECRET || "1234ABCD";
 
 const router = express.Router();
 
@@ -46,7 +46,7 @@ const verifyHookdeckSignature = async (
     rawBody,
     signingSecret: SECRET,
     config: {
-      checkSourceVerification: false,
+      checkSourceVerification: true,
     },
   });
 
@@ -115,7 +115,7 @@ router.post(
   "/github-webhooks-endpoint",
   verifyHookdeckSignature,
   (req: Request, res: Response) => {
-    console.log(req.body);
+    new TextDecoder("utf-8").decode(req.body);
     res.send("GitHub Successfully received Webhook request");
   }
 );

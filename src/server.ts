@@ -19,6 +19,7 @@ const port: string | number = process.env.PORT || "1337";
 app.set("port", port);
 
 app.use("/", routes);
+app.use("/github-webhooks-endpoint", routes);
 
 // Server
 app.listen(port, () => console.log(`Server running on localhost:${port}`));
