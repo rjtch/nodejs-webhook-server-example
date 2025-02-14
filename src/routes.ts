@@ -13,6 +13,10 @@ const router = express.Router();
 //   rawBody: Buffer;
 // }
 
+// interface RequestWithRawBody extends ExpressRequest {
+//   rawBody: Buffer;
+// }
+
 if (!SECRET) {
   console.warn("No Hookdeck Signing Secret set!");
 }
