@@ -8,7 +8,7 @@
 
 - Open up your terminal and clone the repository by running
 
-```bash
+```bashs
 git clone https://github.com/hookdeck/nodejs-webhook-server-example.git
 ```
 
