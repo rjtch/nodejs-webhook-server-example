@@ -15,7 +15,7 @@ git clone https://github.com/hookdeck/nodejs-webhook-server-example.git
 - Change into the cloned directory and install the dependencies
 
 ```bash 
-run: cd nodejs-webhook-server-example
+cd nodejs-webhook-server-example
 npm install
 ```
 
